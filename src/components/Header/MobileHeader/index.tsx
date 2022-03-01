@@ -21,6 +21,7 @@ const MobileHeader: React.FC<Props> = () => {
       document.documentElement.classList.remove('dark');
     }
     setDarkMode(newMode);
+    localStorageCache.set(newMode);
   };
 
   const iconColor = darkMode ? 'white' : '#000';
