@@ -6,8 +6,8 @@ interface Props {}
 const Header: React.FC<Props> = props => {
 
   return (
-    <header className="w-full flex items-center justify-start">
-      <div className={`flex-none w-[${ImageConfig.WIDTH}px]`}></div>
+    <header className="w-full order-2 flex items-center justify-start">
+      <div className="flex-none w-[296px]"></div>
 
       <ul className="w-full flex-1 list-none">
         <li className="m-0 p-0 list-none max-w-fit h-auto min-h-[45px]">

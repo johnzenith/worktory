@@ -6,9 +6,9 @@ interface Props {}
 const Container: React.FC<Props> = props => {
 
   return (
-    <div className="w-full flex items-center justify-start">
+    <React.Fragment>
       <DefaultContainer />
-    </div>
+    </React.Fragment>
   );
 };
 

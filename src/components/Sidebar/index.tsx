@@ -6,9 +6,9 @@ interface Props {}
 const Sidebar: React.FC<Props> = props => {
 
   return (
-    <aside className="w-full max-w-[296px] flex flex-col flex-none">
+    <React.Fragment>
       <DefaultSidebar />
-    </aside>
+    </React.Fragment>
   );
 };
 

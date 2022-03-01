@@ -3,12 +3,12 @@ import DefaultContent from './DefaultContent';
 
 interface Props {}
 
-const Content: React.FC<Props> = props => {
+const Content: React.FC<Props> = () => {
 
   return (
-    <div className="w-full">
+    <React.Fragment>
       <DefaultContent />
-    </div>
+    </React.Fragment>
   );
 };
 
