@@ -1,0 +1,3 @@
+.profile-image > span {
+  border-radius: theme('borderRadius.full');
+}
