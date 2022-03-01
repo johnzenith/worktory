@@ -9,7 +9,7 @@ interface Props {}
 const DefaultContainer: React.FC<Props> = () => {
 
   return (
-    <div className="w-full flex flex-col dark:bg-darkColor px-[15px]">
+    <div className="w-full flex flex-col dark:bg-darkColor">
       <div className="w-full flex flex-col items-center justify-start">
         <Header />
         <Sidebar />

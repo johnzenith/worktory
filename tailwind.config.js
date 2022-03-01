@@ -12,6 +12,7 @@ module.exports = {
         borderColor:       '#30363d',
         borderActive:      '#F78166',
         headerTextColor:   'rgba(240,246,252,0.7)',
+        borderColorLight:  '#30363d',
         headerBackground:  '#F78166',
         textColorEmphasis: '#1f6feb',
       },
