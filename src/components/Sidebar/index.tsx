@@ -3,7 +3,7 @@ import DefaultSidebar from './DefaultSidebar';
 
 interface Props {}
 
-const Sidebar: React.FC<Props> = props => {
+const Sidebar: React.FC<Props> = () => {
 
   return (
     <React.Fragment>

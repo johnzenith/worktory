@@ -48,7 +48,7 @@ const TabMenu: React.FC<Props> = props => {
 
   const getMenuTabByChild = (elem: HTMLElement) => (
     elem.classList.contains('menu-tab') ? elem : elem.closest('.menu-tab')
-    );
+  );
 
   const menus = [
     {
@@ -119,10 +119,10 @@ const TabMenu: React.FC<Props> = props => {
   };
 
   return (
-    <div className="mx-auto w-full tab-menu-wrapper">
-      <div
+    <div className="mx-auto w-full max-w-[452px] pb-[1px] overflow-x-auto overflow-y-hidden tab-menu-wrapper">
+      <nav
         ref={menuTabElem}
-        className={clsx('horizontal-menu-tabs w-full overflow-x-auto flex items-center justify-center px-15 mx-auto border-solid mt-[17px] flex-row h-[40px] border-b border-borderColor dark:border-borderColorLight', props?.className || '')}
+        className={clsx('horizontal-menu-tabs w-full min-w-[452px] overflow-visible flex items-center justify-center  mx-auto border-solid mt-[17px] flex-row h-auto border-b border-borderColor dark:border-borderColorLight', props?.className || '')}
       >
 
         {menus.map((menu, index: number) => (
@@ -132,7 +132,7 @@ const TabMenu: React.FC<Props> = props => {
           >
             <a
               onClick={handleTabMenu(index)}
-              className={clsx('menu-tab whitespace-nowrap min-w-fit flex items-center box-border h-auto font-sans dark:text-textColorDark text-sm py-[8px] border-solid transition-all duration-300 w-auto px-5 border-b-2 border-transparent', menuIndex === index ? 'is-tab-active font-medium' : '')}
+              className={clsx('menu-tab min-w-fit flex items-center box-border h-auto font-sans dark:text-textColorDark text-sm py-[8px] border-solid transition-all duration-300 w-auto px-5 border-b-2 border-transparent', menuIndex === index ? 'is-tab-active font-medium' : '')}
             >
               {<menu.icon size={16} />}
               <span className="ml-[6px]">
@@ -141,7 +141,7 @@ const TabMenu: React.FC<Props> = props => {
             </a>
           </Link>
         ))}
-      </div>
+      </nav>
 
       <span style={tabBarMargins} className="tab-bar"></span>
     </div>
