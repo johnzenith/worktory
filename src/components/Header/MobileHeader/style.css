@@ -1,0 +1,21 @@
+.mobileHeader button > svg path {
+  fill: theme('colors.buttonBackground');
+}
+
+.dark .mobileHeader button > svg path {
+  fill: theme('colors.headerIcon');
+}
+
+.mobileHeader button:hover svg path {
+  color: #000 !important;
+}
+
+.mobileHeader .toggleDarkModeBtn svg path {
+  fill: theme('colors.darkColor');
+  color: transparent;
+}
+
+.dark .mobileHeader .toggleDarkModeBtn svg line,
+.dark .mobileHeader .toggleDarkModeBtn svg circle {
+  color: #fff;
+}

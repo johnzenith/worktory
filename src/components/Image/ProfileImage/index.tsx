@@ -6,7 +6,7 @@ type Props = {}
 
 const ProfileImage: React.FC<Props> = () => {
   return (
-    <div className="profile-image">
+    <div className="profile-image max-w-[16.4%] md:max-w-[256px] laptop:max-w-[296px]">
       <FullImage
         src={ImageConfig.AVATAR}
         width={ImageConfig.WIDTH}
