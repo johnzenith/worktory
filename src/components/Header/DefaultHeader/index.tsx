@@ -6,9 +6,9 @@ interface Props {}
 const Header: React.FC<Props> = props => {
 
   return (
-    <header className="w-full order-2 flex items-center justify-start">
+    <header className="w-full order-2 flex items-center justify-start px-[15px]">
       <div className="flex-none w-[296px] hidden md:block"></div>
-
+      
       <TabMenu />
     </header>
   );
