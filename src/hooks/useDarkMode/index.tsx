@@ -1,5 +1,5 @@
-import { useState, useEffect }    from 'react';
-import useLocalStorage from "../useLocalStorage";
+import { useState, useEffect } from 'react';
+import useLocalStorage         from "../useLocalStorage";
 
 export default function useDarkMode() {
   const localStorageCache       = useLocalStorage('darkMode');
@@ -27,7 +27,7 @@ export default function useDarkMode() {
   };
 
   return {
-    setMode: handleDarkMode,
+    setMode:    handleDarkMode,
     isDarkMode: darkMode,
   };
 }

@@ -1,0 +1,7 @@
+.profileLinkText svg path {
+  fill: theme('colors.darkColor');
+}
+
+.dark .profileLinkText svg path {
+  fill: theme('colors.headerTextColor');
+}

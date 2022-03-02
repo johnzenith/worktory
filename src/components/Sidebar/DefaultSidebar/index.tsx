@@ -1,9 +1,10 @@
-import React             from 'react';
-import Badge             from '../../Badge';
-import Tagline           from '../../Tagline';
-import MobileHeader      from '../../Header/MobileHeader';
-import ProfileImage      from '../../Image/ProfileImage';
-import OpenForWorkButton from '../../Button/OpenForWorkButton';
+import React            from 'react';
+import Badge            from '../../Badge';
+import Author           from '../../Author';
+import Tagline          from '../../Tagline';
+import ProfileLinks     from '../../ProfileLinks';
+import MobileHeader     from '../../Header/MobileHeader';
+import OpenToWorkButton from '../../Button/OpenToWorkButton';
 
 interface Props {}
 
@@ -14,18 +15,10 @@ const DefaultSidebar: React.FC<Props> = () => {
         <MobileHeader />
       </div>
 
-      <div className="w-full flex items-center justify-center px-[15px]">
-        <ProfileImage />
-        <div className="w-full justify-center max-w-fit flex flex-col items-start pl-[15px]">
-          <h1
-            className="m-0 p-0 font-sans text-[1.6em] md:text-[2em] font-[600] dark:text-[#fff]">
-            John Zenith
-          </h1>
-          <h4 className="mt-[-3px] font-sans text-[1em] md:text-[1.4em] dark:text-[#fff]">
-            JavaScript Engineer
-          </h4>
-        </div>
-      </div>
+      <Author
+        authorName="John Zenith"
+        profession="JavaScript Engineer"
+      />
 
       <div className="w-full flex flex-col items-center px-[15px] justify-center max-w-[500px] mx-auto">
         <Tagline
@@ -34,10 +27,11 @@ const DefaultSidebar: React.FC<Props> = () => {
 
         <div className="w-full max-w-fit flex items-center justify-between mt-2">
           <Badge label="Frontend Developer" className="mr-[15px]" />
-          <Badge label="Backend Developer" className="justify-end" />
+          <Badge label="Backend Engineer" className="justify-end" />
         </div>
 
-        <OpenForWorkButton />
+        <OpenToWorkButton />
+        <ProfileLinks />
       </div>
     </aside>
   );
