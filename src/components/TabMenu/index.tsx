@@ -101,8 +101,6 @@ const TabMenu: React.FC<Props> = props => {
         }
       });
 
-      console.log(elem)
-
       marginLeft  = `${widths}px`;
       marginRight = 'calc(100% - ' + (+widths + elem.offsetWidth) + 'px)';
     }
@@ -112,7 +110,6 @@ const TabMenu: React.FC<Props> = props => {
       marginRight,
     });
 
-    console.log(marginLeft, marginRight);
     setMenuIndex(index);
 
     // Show the settings content
