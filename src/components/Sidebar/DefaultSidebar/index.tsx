@@ -1,7 +1,9 @@
-import React        from 'react';
-import Badge        from '../../Badge';
-import MobileHeader from '../../Header/MobileHeader';
-import ProfileImage from '../../Image/ProfileImage';
+import React             from 'react';
+import Badge             from '../../Badge';
+import Tagline           from '../../Tagline';
+import MobileHeader      from '../../Header/MobileHeader';
+import ProfileImage      from '../../Image/ProfileImage';
+import OpenForWorkButton from '../../Button/OpenForWorkButton';
 
 interface Props {}
 
@@ -26,14 +28,16 @@ const DefaultSidebar: React.FC<Props> = () => {
       </div>
 
       <div className="w-full flex flex-col items-center px-[15px] justify-center max-w-[500px] mx-auto">
-        <div className="w-full flex items-center py-[4px] px-[15px] mt-5 border-solid border border-borderColor dark:border-borderColorLight rounded-[6px] font-sans text-sm text-[#000] dark:text-white max-w-fit">
-          JavaScript Engineer, PHP Expert, WordPress Enthusiast
-        </div>
+        <Tagline
+          label="JavaScript Engineer, PHP Expert, WordPress Enthusiast"
+        />
 
         <div className="w-full max-w-fit flex items-center justify-between mt-2">
-          <Badge label="Frontend Developer" />
+          <Badge label="Frontend Developer" className="mr-[15px]" />
           <Badge label="Backend Developer" className="justify-end" />
         </div>
+
+        <OpenForWorkButton />
       </div>
     </aside>
   );

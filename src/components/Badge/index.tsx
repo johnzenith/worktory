@@ -10,9 +10,9 @@ interface Props {
 const Badge: React.FC<Props> = props => {
 
   return (
-    <div className={clsx('flex font-sans text-sm dark:text-[#fff] min-w-[155px]', props?.className || '')}>
-      <span className="flex items-center justify-center w-[18px] h-[18px] rounded-full bg-success mr-[5px]">
-        <CheckIcon size={14} fill="#fff" />
+    <div className={clsx('flex font-sans text-sm dark:text-[#fff]', props?.className || '')}>
+      <span className="flex items-center justify-center w-[17px] h-[17px] rounded-full bg-success mr-[5px]">
+        <CheckIcon size={12} fill="#fff" />
       </span>
       {props.label}
     </div>
