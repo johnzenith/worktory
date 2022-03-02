@@ -6,7 +6,13 @@ export default function useDarkMode() {
   const [darkMode, setDarkMode] = useState<number>(0);
 
   useEffect(function () {
-    const mode = localStorageCache.get();
+    let mode = localStorageCache.get();
+
+    // Use default mode if mode has not been set by the user
+    if (mode === null || mode === undefined) {
+      mode = process.env.NEXT_PUBLIC_DARK_MODE;
+    }
+
     setDarkMode(mode ? 1 : 0);
     toggleDocumentDarkMode(mode);
   }, []);
