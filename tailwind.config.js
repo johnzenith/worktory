@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       colors: {
         success:               '#288528',
+        tabIcon:               '#484f58',
         darkColor:             '#0d1117',
         textColor:             '#58a6ff',
         borderColor:           '#dbdbdb',

@@ -20,7 +20,7 @@ const DefaultSidebar: React.FC<Props> = () => {
         profession="JavaScript Engineer"
       />
 
-      <div className="w-full flex flex-col items-center px-[15px] justify-center max-w-[500px] mx-auto">
+      <div className="w-full flex flex-col items-center px-[15px] justify-center max-w-[500px] md:max-w-full mx-auto">
         <Tagline
           label="JavaScript Engineer, PHP Expert, WordPress Enthusiast"
         />

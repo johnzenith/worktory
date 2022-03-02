@@ -1,0 +1,23 @@
+.tab-bar {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  height: 2px;
+  background-color: theme('colors.borderActive');
+  transform: translateZ(0);
+  will-change: left,right;
+  display: block;
+  margin-top: -3px;
+
+  /* hidden */
+  margin-left: 0;
+  margin-right: calc(100% - 0px);
+}
+
+.menu-tab svg path {
+  fill: theme('colors.tabIcon');
+}
+
+.menu-tab.is-tab-active svg path {
+  fill: theme('colors.headerTextColor');
+}
