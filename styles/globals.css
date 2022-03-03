@@ -5,4 +5,5 @@
 @import '../src/components/Image/ProfileImage/style';
 @import '../src/components/Header/MobileHeader/style';
 @import '../src/components/ProfileLinks/style';
+@import '../src/components/Content/ProfileOverview/style';
 @import '../src/components/TabMenu/style';

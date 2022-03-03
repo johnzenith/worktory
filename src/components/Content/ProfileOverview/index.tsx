@@ -333,7 +333,7 @@ const ProfileOverview: React.FC<Props> = () => {
   });
 
   return (
-    <div className="w-full flex items-center justify-start my-7 mx-auto">
+    <div className="profile-overview w-full flex items-center justify-start my-7 mx-auto">
       <Highlight 
         toggle={true}
         badge="Active"

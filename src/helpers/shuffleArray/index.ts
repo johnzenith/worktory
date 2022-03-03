@@ -3,7 +3,7 @@
  *
  * Note: null is returned if the array is empty
  */
-const useShuffle = (arrayToShuffle: (string | number)[]): string | number | null => {
+const shuffleArray = (arrayToShuffle: (string | number)[]): string | number | null => {
   if (!arrayToShuffle.length) return null;
 
   for (let i = arrayToShuffle.length - 1; i > 0; i--) {
@@ -20,4 +20,4 @@ const useShuffle = (arrayToShuffle: (string | number)[]): string | number | null
   return arrayToShuffle[0];
 };
 
-export default useShuffle;
+export default shuffleArray;

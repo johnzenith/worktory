@@ -5,7 +5,9 @@ import { FiLayers }         from "react-icons/fi";
 import { VscPreview }       from "react-icons/vsc";
 import { FaGripHorizontal } from "react-icons/fa";
 
-interface Props {
+import colors, { ColorType } from '../../config/colors';
+
+export interface Props {
   icon?:        IconType;
   tags?:        React.ReactNode[];
   label:        React.ReactNode;
@@ -20,6 +22,11 @@ const Highlight: React.FC<Props> = props => {
 
   const icon = props.icon ?
     <props.icon size={16} /> : <FiLayers size={16} />;
+
+  const getColor = (tag: string) => {
+    const sanitizeTag = tag.toLowerCase().replace(/[^a-z]/g, '') as ColorType;
+    return colors?.[sanitizeTag] || colors.default;
+  }
 
   const handleHighlight = () => {
     setHidden(!hidden);
@@ -61,16 +68,21 @@ const Highlight: React.FC<Props> = props => {
 
       <div className={clsx('w-full flex-col', hidden ? 'hidden' : 'flex')}>
         {props?.description && 
-          <div className="flex flex-wrap leading-[28px] w-full mt-3 text-buttonBackgroundHover dark:text-borderColorHover font-sans text-sm">
+          <div className="highlight-desc flex flex-wrap w-full mt-3 text-buttonBackgroundHover dark:text-borderColorHover font-sans text-sm">
             {props.description}
           </div>
         }
 
         {props?.tags &&
-          <div className="w-full">
+          <div className="w-full flex mt-4">
             {props.tags.map((tag, index: number) => (
-              <div key={`tag-${index}`} className="flex items-center w-auto mr-[12px]">
-                <span className="block w-[12px] h-[12px] rounded-full mr-[3px]"></span>
+              <div key={`tag-${index}`} className="flex items-center w-auto mr-[10px]">
+                <span
+                  style={{
+                    backgroundColor: getColor(tag as ColorType)
+                  }}
+                  className="block w-[11px] h-[11px] rounded-full mr-[3px]"
+                ></span>
                 <span className="font-sans text-[12px] dark:text-textColorDark">
                   {tag}
                 </span>
