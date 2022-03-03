@@ -5,9 +5,9 @@ interface Props {}
 const DefaultContent: React.FC<Props> = props => {
 
   return (
-    <main className="w-full order-3 flex items-center justify-start">
-      DefaultContent
-    </main>
+    <div className="w-full order-3 flex items-center justify-start">
+      {/* DefaultContent */}
+    </div>
   );
 };
 

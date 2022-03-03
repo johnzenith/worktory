@@ -44,7 +44,7 @@ const Header: React.FC<Props> = () => {
   ];
 
   return (
-    <div className="w-full order-2 flex flex-col items-center justify-start px-[15px]">
+    <div className="w-full order-2 md:order-none flex flex-col items-center justify-start px-[15px] md:pl-[5px] md:pr-[30px]">
       <div className="flex-none w-[296px] hidden md:block"></div>
       
       <TabMenu menus={menus} className="mt-[30px]" />

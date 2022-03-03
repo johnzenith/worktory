@@ -118,7 +118,6 @@ const TabMenu: React.FC<Props> = props => {
 
       <main className="w-full">
         {menus[menuIndex].content}
-        <div>zenith</div>
       </main>
     </React.Fragment>
   );

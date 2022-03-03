@@ -34,17 +34,18 @@ const ProfileLinks: React.FC<Props> = props => {
       link:  'https://www.linkedin.com/in/john-zenith-643336160/',
       icon:  FaLinkedinIn,
       label: 'LinkedIn',
+      hidden: true,
     },
   ];
 
-  const renderLinks = links.map(link => {
+  const renderLinks = links.filter(link => !link.hidden).map(link => {
     const isMail = 'Mail' === link.label;
     const rel    = isMail ? {} : { rel: 'noreferrer', target: '_blank' };
     
     return (
       <a
         key={link.label}
-        className="w-full flex font-sans dark:text-textColorDark text-sm mt-[6px]  hover:!text-textColorEmphasis hover:underline transition-all"
+        className="w-full flex font-sans dark:text-textColorDark text-sm mt-[10px]  hover:!text-textColorEmphasis hover:underline transition-all"
         href={link.link}
         {...rel}
       >
