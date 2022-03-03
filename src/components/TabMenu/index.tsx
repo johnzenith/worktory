@@ -5,23 +5,28 @@ import React, {
 } from 'react';
 import clsx from 'clsx';
 import Link from 'next/link';
-import { IoBookOutline }  from "react-icons/io5";
-import { FaRegLightbulb } from "react-icons/fa";
-import {
-  GoRepo,
-  GoFileCode
-} from "react-icons/go";
+import { IconType } from "react-icons";
 
 type TabMenuMarginsType = {
   marginLeft:  number | string;
   marginRight: number | string;
 }
 
+type MenuType = {
+  icon:    IconType;
+  link:    string;
+  count?:  number;
+  label?:  string;
+  content: React.ReactNode;
+}
+
 interface Props {
+  menus: MenuType[];
   className?: string;
 }
 
 const TabMenu: React.FC<Props> = props => {
+  const menus                             = props.menus;
   const menuTabElem                       = useRef(null);
   const [menuIndex, setMenuIndex]         = useState(0);
   const [tabBarMargins, setTabBarMargins] = useState<TabMenuMarginsType>({
@@ -50,36 +55,6 @@ const TabMenu: React.FC<Props> = props => {
     elem.classList.contains('menu-tab') ? elem : elem.closest('.menu-tab')
   );
 
-  const menus = [
-    {
-      icon:    IoBookOutline,
-      link:    '/',
-      label:   'Overview',
-      content: '',
-    },
-    {
-      icon:    GoRepo,
-      link:    '/',
-      label:   'Project',
-      count:   20,
-      content: '',
-    },
-    {
-      icon:    GoFileCode,
-      link:    '/',
-      label:   'Code Gist',
-      count:   20,
-      content: '',
-    },
-    {
-      icon:    FaRegLightbulb,
-      link:    '/',
-      label:   'Insight',
-      count:   25,
-      content: '',
-    },
-  ];
-
   const handleTabMenu = (index: number) => (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (menuIndex === index) return;
 
@@ -96,7 +71,6 @@ const TabMenu: React.FC<Props> = props => {
       tabs.forEach(function (tab, tabIndex: number) {
         // Ignore the clicked (future-current) tab index
         if (tabIndex < index) {
-          console.log((tab as HTMLElement).offsetWidth)
           widths += +(tab as HTMLElement).offsetWidth;
         }
       });
@@ -111,37 +85,42 @@ const TabMenu: React.FC<Props> = props => {
     });
 
     setMenuIndex(index);
-
-    // Show the settings content
   };
 
   return (
-    <div className="mx-auto w-full max-w-[452px] pb-[1px] overflow-x-auto overflow-y-hidden tab-menu-wrapper">
-      <nav
-        ref={menuTabElem}
-        className={clsx('horizontal-menu-tabs w-full min-w-[452px] overflow-visible flex items-center justify-center  mx-auto border-solid mt-[17px] flex-row h-auto border-b border-borderColor dark:border-borderColorLight', props?.className || '')}
-      >
+    <React.Fragment>
+      <div className="mx-auto w-full max-w-[452px] pb-[1px] overflow-x-auto overflow-y-hidden tab-menu-wrapper">
+        <nav
+          ref={menuTabElem}
+          className={clsx('horizontal-menu-tabs w-full min-w-[452px] overflow-visible flex items-center justify-center  mx-auto border-solid mt-[17px] flex-row h-auto border-b border-borderColor dark:border-borderColorLight', props?.className || '')}
+        >
 
-        {menus.map((menu, index: number) => (
-          <Link
-            key={menu.label}
-            href={menu.link}
-          >
-            <a
-              onClick={handleTabMenu(index)}
-              className={clsx('menu-tab min-w-fit flex items-center box-border h-auto font-sans dark:text-textColorDark text-sm py-[8px] border-solid transition-all duration-300 w-auto px-5 border-b-2 border-transparent', menuIndex === index ? 'is-tab-active font-medium' : '')}
+          {menus.map((menu, index: number) => (
+            <Link
+              key={menu.label}
+              href={menu.link}
             >
-              {<menu.icon size={16} />}
-              <span className="ml-[6px]">
-                {menu.label}
-              </span>
-            </a>
-          </Link>
-        ))}
-      </nav>
+              <a
+                onClick={handleTabMenu(index)}
+                className={clsx('menu-tab min-w-fit flex items-center box-border h-auto font-sans dark:text-textColorDark text-sm py-[8px] border-solid transition-all duration-300 w-auto px-5 border-b-2 border-transparent focus-visible:!outline-none', menuIndex === index ? 'is-tab-active font-medium' : '')}
+              >
+                {<menu.icon size={16} />}
+                <span className="ml-[6px] font-sans dark:text-textColorDark text-sm">
+                  {menu.label}
+                </span>
+              </a>
+            </Link>
+          ))}
+        </nav>
 
-      <span style={tabBarMargins} className="tab-bar"></span>
-    </div>
+        <span style={tabBarMargins} className="tab-bar"></span>
+      </div>
+
+      <main className="w-full">
+        {menus[menuIndex].content}
+        <div>zenith</div>
+      </main>
+    </React.Fragment>
   );
 };
 

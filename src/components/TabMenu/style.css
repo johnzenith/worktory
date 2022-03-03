@@ -19,5 +19,9 @@
 }
 
 .menu-tab.is-tab-active svg path {
+  fill: theme('colors.darkColor');
+}
+
+.dark .menu-tab.is-tab-active svg path {
   fill: theme('colors.headerTextColor');
 }
