@@ -45,6 +45,7 @@ const Highlight: React.FC<Props> = props => {
         
         {props.toggle &&
           <button 
+            aria-label="toggle-content"
             onClick={handleHighlight}
             className="w-[16px] flex items-center"
           >
