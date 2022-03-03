@@ -21,7 +21,7 @@ type MenuType = {
 }
 
 interface Props {
-  menus: MenuType[];
+  menus:      MenuType[];
   className?: string;
 }
 
@@ -45,6 +45,9 @@ const TabMenu: React.FC<Props> = props => {
     }
 
     // On scroll
+    window.addEventListener('scroll', () => {
+
+    });
   }, []);
 
   const queryMenuTabs = () => (

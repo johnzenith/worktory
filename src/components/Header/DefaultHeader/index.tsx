@@ -7,6 +7,7 @@ import {
 } from "react-icons/fa";
 import { GoRepo } from "react-icons/go";
 
+import PinnedProjects  from '../../Content/PinnedProjects';
 import ProfileOverview from '../../Content/ProfileOverview';
 
 interface Props {}
@@ -18,7 +19,12 @@ const Header: React.FC<Props> = () => {
       icon:    VscOutput,
       link:    '/',
       label:   'Overview',
-      content: <ProfileOverview />,
+      content: (
+        <React.Fragment>
+          <ProfileOverview />
+          <PinnedProjects />
+        </React.Fragment>
+      )
     },
     {
       icon:    GoRepo,

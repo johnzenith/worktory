@@ -5,6 +5,7 @@ import {
   FaTwitter,
   FaLinkedinIn,
   FaRegEnvelope,
+  FaStackOverflow,
 } from 'react-icons/fa';
 
 interface Props {
@@ -26,15 +27,22 @@ const ProfileLinks: React.FC<Props> = props => {
       label: 'GitHub',
     },
     {
+      link:     'https://stackoverflow.com/users/5646942/john-zenith/',
+      icon:     FaStackOverflow,
+      label:    'Stack Overflow',
+      useTitle: 'StackOverflow/john-zenith',
+    },
+    {
       link:  'https://twitter.com/john_zenith',
       icon:  FaTwitter,
       label: 'Twitter',
     },
     {
-      link:  'https://www.linkedin.com/in/john-zenith-643336160/',
-      icon:  FaLinkedinIn,
-      label: 'LinkedIn',
-      hidden: true,
+      link:     'https://www.linkedin.com/in/john-zenith-643336160/',
+      icon:     FaLinkedinIn,
+      label:    'LinkedIn',
+      useTitle: 'LinkedIn/john-zenith',
+      hidden: false,
     },
   ];
 
@@ -52,7 +60,7 @@ const ProfileLinks: React.FC<Props> = props => {
         <span className="flex items-center w-[22px] !text-headerTextColor profileLinkText">
           <link.icon size={14} />
         </span>
-        {isMail ? link.useTitle : link.link}
+        {link?.useTitle || link.link}
       </a>
     );
   });

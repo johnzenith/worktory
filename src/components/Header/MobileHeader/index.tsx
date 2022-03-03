@@ -12,13 +12,17 @@ const MobileHeader: React.FC<Props> = () => {
 
   return (
     <header className="mobileHeader w-full order-2 flex items-center justify-between p-[15px] md:px-[30px] mb-5 dark:bg-stickyBorder dark:border-0 border-b dark:border-b-borderColorLight bg-[rgba(0,0,0,0.009)] border-b-[rgba(0,0,0,0.02)]">
-      <button className="flex">
+      <button className="flex" aria-label="menu-bar">
         <GoThreeBars size={24} fill={iconColor} />
       </button>
-      <button className="flex">
+      <button className="flex" aria-label="my-code">
         <GoCode  size={24} fill={iconColor} />
       </button>
-      <button className="flex toggleDarkModeBtn" onClick={darkMode.setMode}>
+      <button
+        aria-label="toggle-dark-mode"
+        className="flex toggleDarkModeBtn"
+        onClick={darkMode.setMode}
+      >
         {darkMode.isDarkMode ?
           <FiSun size={24} fill="#fff" />
           : 

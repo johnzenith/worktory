@@ -1,13 +1,11 @@
-import React         from 'react';
+import React     from 'react';
 import Highlight from '../../Highlight';
 import {
   DiGo,
   DiNpm,
-  DiPhp,
   DiAws,
   DiCode,
   DiSass,
-  DiReact,
   DiMysql,
   DiRedis,
   DiLinux,
@@ -22,8 +20,8 @@ import {
   DiJqueryLogo,
   DiPostgresql,
   DiGithubBadge,
-  DiNodejsSmall,
   DiJavascript1,
+  DiGoogleCloudPlatform,
 } from 'react-icons/di';
 
 import {
@@ -155,6 +153,12 @@ const ProfileOverview: React.FC<Props> = () => {
       icon: DiAws,
       size: 18,
       color: '#FF9900',
+    },
+    {
+      name: 'Google Cloud Platform',
+      icon: DiGoogleCloudPlatform,
+      size: 18,
+      color: '#4285F4',
     },
     {
       name: 'Heroku',
@@ -329,7 +333,7 @@ const ProfileOverview: React.FC<Props> = () => {
   });
 
   return (
-    <div className="w-full flex items-center justify-start my-7 mx-auto">
+    <div className="profile-overview w-full flex items-center justify-start my-7 mx-auto">
       <Highlight 
         toggle={true}
         badge="Active"
