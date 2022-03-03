@@ -1,3 +1,8 @@
 .profile-image > span {
   border-radius: theme('borderRadius.full');
+  border: 1px solid theme('colors.textColorDark') !important;
+}
+
+.dark .profile-image > span {
+  border: 1px solid theme('colors.buttonBackgroundHover') !important;
 }
