@@ -44,7 +44,7 @@ const ProfileLinks: React.FC<Props> = props => {
     return (
       <a
         key={link.label}
-        className="w-full flex font-sans text-sm mt-1 dark:text-[#fff] hover:!text-textColorEmphasis hover:underline transition-all"
+        className="w-full flex font-sans dark:text-textColorDark text-sm mt-[6px]  hover:!text-textColorEmphasis hover:underline transition-all"
         href={link.link}
         {...rel}
       >

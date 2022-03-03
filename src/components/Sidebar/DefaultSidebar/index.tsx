@@ -25,7 +25,7 @@ const DefaultSidebar: React.FC<Props> = () => {
           label="JavaScript Engineer, PHP Expert, WordPress Enthusiast"
         />
 
-        <div className="w-full max-w-fit flex items-center justify-between mt-2">
+        <div className="w-full max-w-fit flex items-center justify-between mt-3">
           <Badge label="Frontend Developer" className="mr-[15px]" />
           <Badge label="Backend Engineer" className="justify-end" />
         </div>
