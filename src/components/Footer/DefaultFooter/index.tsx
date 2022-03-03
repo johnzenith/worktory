@@ -6,7 +6,7 @@ const DefaultFooter: React.FC<Props> = props => {
 
   return (
     <div className="w-full flex items-center justify-start">
-      DefaultFooter
+      {/* DefaultFooter */}
     </div>
   );
 };

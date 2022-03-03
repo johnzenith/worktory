@@ -43,6 +43,8 @@ const TabMenu: React.FC<Props> = props => {
         marginRight: computeElemWidth(firstTabElem)
       });
     }
+
+    // On scroll
   }, []);
 
   const queryMenuTabs = () => (
@@ -89,10 +91,16 @@ const TabMenu: React.FC<Props> = props => {
 
   return (
     <React.Fragment>
-      <div className="mx-auto w-full max-w-[452px] pb-[1px] overflow-x-auto overflow-y-hidden tab-menu-wrapper">
+      <div className={clsx(
+        'mx-auto w-full max-w-[452px] md:max-w-full pb-[1px] overflow-x-auto overflow-y-hidden tab-menu-wrapper',
+        ''
+      )}>
         <nav
           ref={menuTabElem}
-          className={clsx('horizontal-menu-tabs w-full min-w-[452px] overflow-visible flex items-center justify-center  mx-auto border-solid mt-[17px] flex-row h-auto border-b border-borderColor dark:border-borderColorLight', props?.className || '')}
+          className={clsx(
+            'horizontal-menu-tabs w-full min-w-[452px] overflow-visible flex items-center justify-center md:justify-start mx-auto md:mx-0 border-solid mt-[17px] md:mt-2 flex-row h-auto border-b border-borderColor dark:border-borderColorLight',
+            props?.className || ''
+          )}
         >
 
           {menus.map((menu, index: number) => (
@@ -118,7 +126,6 @@ const TabMenu: React.FC<Props> = props => {
 
       <main className="w-full">
         {menus[menuIndex].content}
-        <div>zenith</div>
       </main>
     </React.Fragment>
   );

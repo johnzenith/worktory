@@ -11,7 +11,7 @@ const MobileHeader: React.FC<Props> = () => {
   const iconColor = darkMode.isDarkMode ? 'white' : '#000';
 
   return (
-    <div className="mobileHeader w-full order-2 flex items-center justify-between p-[15px] mb-5 border-solid border-b border-b-borderColor dark:border-b-borderColorLight">
+    <header className="mobileHeader w-full order-2 flex items-center justify-between p-[15px] md:px-[30px] mb-5 dark:bg-stickyBorder dark:border-0 border-b dark:border-b-borderColorLight bg-[rgba(0,0,0,0.009)] border-b-[rgba(0,0,0,0.02)]">
       <button className="flex">
         <GoThreeBars size={24} fill={iconColor} />
       </button>
@@ -25,7 +25,7 @@ const MobileHeader: React.FC<Props> = () => {
           <BiMoon size={24} />
         }
       </button>
-    </div>
+    </header>
   );
 };
 

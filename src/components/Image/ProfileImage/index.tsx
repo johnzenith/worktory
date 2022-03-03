@@ -8,6 +8,7 @@ const ProfileImage: React.FC<Props> = () => {
   return (
     <div className="profile-image max-w-[16.4%] md:max-w-[256px] laptop:max-w-[296px]">
       <FullImage
+        alt="John Zenith"
         src={ImageConfig.AVATAR}
         width={ImageConfig.WIDTH}
         height={ImageConfig.HEIGHT}
