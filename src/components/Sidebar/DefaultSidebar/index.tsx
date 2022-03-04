@@ -16,7 +16,7 @@ const DefaultSidebar: React.FC<Props> = () => {
       </div> */}
 
       <Author
-        authorName="John Zenith"
+        authorName="John Musa"
         profession="JavaScript Engineer"
       />
 
