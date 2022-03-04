@@ -148,12 +148,12 @@ const PinnedProjects: React.FC<Props> = () => {
             label: 'Preview',
           },
           {
-            url:   'https://cranky-davinci-7bdd81.netlify.app/',
+            url:   '#',
             type:  ValidUrlType.Link,
             label: 'Open',
           },
           {
-            url:   'https://github.com/johnzenith/cloudfift-test',
+            url:   'https://github.com/johnzenith/check-digits-js',
             type:  ValidUrlType.Link,
             label: 'View Code',
           },
