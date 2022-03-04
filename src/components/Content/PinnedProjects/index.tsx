@@ -1,7 +1,8 @@
 import React      from 'react';
 import splitArray from '../../../helpers/splitArray';
 import Highlight, {
-  Props as HighlightProps
+  Props as HighlightProps,
+  ValidUrlType
 }  from '../../Highlight';
 
 interface ProjectType extends HighlightProps {
@@ -20,6 +21,23 @@ const PinnedProjects: React.FC<Props> = () => {
         label:       'Worktory',
         project:     true,
         description: 'A portfolio template library replicating the GitHub UI. Same is used to power this site.',
+        urls: [
+          {
+            url:   '#',
+            type:  ValidUrlType.Image,
+            label: 'Preview',
+          },
+          {
+            url:   'https://worktory.vercel.app/',
+            type:  ValidUrlType.Link,
+            label: 'Open',
+          },
+          {
+            url:   'https://github.com/johnzenith/worktory',
+            type:  ValidUrlType.Link,
+            label: 'View Code',
+          },
+        ]
       },
       {
         tags:        ['React', 'Firebase', 'Material UI'],
@@ -27,6 +45,23 @@ const PinnedProjects: React.FC<Props> = () => {
         label:       'Kingso-ERP',
         project:     true,
         description: 'Demo for an employee management module',
+        urls: [
+          {
+            url:   '#',
+            type:  ValidUrlType.Image,
+            label: 'Preview',
+          },
+          {
+            url:   'https://kingsooerp-development.web.app/',
+            type:  ValidUrlType.Link,
+            label: 'Open',
+          },
+          {
+            url:   'https://github.com/johnzenith/kingsooerp-app',
+            type:  ValidUrlType.Link,
+            label: 'View Code',
+          },
+        ]
       },
       {
         tags:        ['React', 'Firebase', 'Material UI'],
@@ -34,6 +69,23 @@ const PinnedProjects: React.FC<Props> = () => {
         label:       'Slack Clone',
         project:     true,
         description: 'app.slack.com clone',
+        urls: [
+          {
+            url:   '#',
+            type:  ValidUrlType.Image,
+            label: 'Preview',
+          },
+          {
+            url:   'https://slack-clone-5b0e2.web.app/',
+            type:  ValidUrlType.Link,
+            label: 'Open',
+          },
+          {
+            url:   'https://github.com/johnzenith/slack-clone',
+            type:  ValidUrlType.Link,
+            label: 'View Code',
+          },
+        ]
       },
       {
         tags:        ['ReactNative', 'Expo'],
@@ -41,6 +93,23 @@ const PinnedProjects: React.FC<Props> = () => {
         label:       'Health App UI',
         project:     true,
         description: 'ReactNative health app UI',
+        urls: [
+          {
+            url:   '#',
+            type:  ValidUrlType.Image,
+            label: 'Preview',
+          },
+          {
+            url:   'https://expo.io/@johnzenith/projects/health-app-ui',
+            type:  ValidUrlType.Link,
+            label: 'Open',
+          },
+          {
+            url:   'https://github.com/johnzenith/health-app-ui',
+            type:  ValidUrlType.Link,
+            label: 'View Code',
+          },
+        ]
       },
       {
         tags:        ['React', 'Material UI', 'Netlify'],
@@ -48,6 +117,23 @@ const PinnedProjects: React.FC<Props> = () => {
         label:       'Financial App UI',
         project:     true,
         description: 'A demo of a financial app UI on capital investment',
+        urls: [
+          {
+            url:   '#',
+            type:  ValidUrlType.Image,
+            label: 'Preview',
+          },
+          {
+            url:   'https://cranky-davinci-7bdd81.netlify.app/',
+            type:  ValidUrlType.Link,
+            label: 'Open',
+          },
+          {
+            url:   'https://github.com/johnzenith/cloudfift-test',
+            type:  ValidUrlType.Link,
+            label: 'View Code',
+          },
+        ]
       },
       {
         tags:        ['JavaScript'],
@@ -55,6 +141,23 @@ const PinnedProjects: React.FC<Props> = () => {
         label:       'Check Digit JS',
         project:     true,
         description: 'A small library to quickly verify credit cards and serial numbers',
+        urls: [
+          {
+            url:   '#',
+            type:  ValidUrlType.Image,
+            label: 'Preview',
+          },
+          {
+            url:   '#',
+            type:  ValidUrlType.Link,
+            label: 'Open',
+          },
+          {
+            url:   'https://github.com/johnzenith/check-digits-js',
+            type:  ValidUrlType.Link,
+            label: 'View Code',
+          },
+        ]
       },
       {
         tags:        ['Socket.IO', 'NodeJS', 'Heroku'],
@@ -62,6 +165,23 @@ const PinnedProjects: React.FC<Props> = () => {
         label:       'Socket.IO Chat App',
         project:     true,
         description: 'A simple chat app that demonstates how web socket works using Socket.IO',
+        urls: [
+          {
+            url:   '#',
+            type:  ValidUrlType.Image,
+            label: 'Preview',
+          },
+          {
+            url:   'https://socket-io-chat-demo-app.herokuapp.com/',
+            type:  ValidUrlType.Link,
+            label: 'Open',
+          },
+          {
+            url:   'https://github.com/johnzenith/socket-io-chat',
+            type:  ValidUrlType.Link,
+            label: 'View Code',
+          },
+        ]
       },
     ];
     
@@ -74,11 +194,11 @@ const PinnedProjects: React.FC<Props> = () => {
         <Highlight
           key={`highlight-${index}`}
           toggle={true}
+          urls={project?.urls}
           badge={project?.badge}
           label={project.label}
           description={project?.description}
           tags={project?.tags}
-          className="h-full"
         />
       )))}
    </div>

@@ -1,13 +1,28 @@
 import React, { useState }  from 'react';
 import clsx                 from 'clsx';
+
 import { IconType }         from "react-icons";
 import { FiLayers }         from "react-icons/fi";
 import { VscPreview }       from "react-icons/vsc";
 import { FaGripHorizontal } from "react-icons/fa";
 
+import DefaultButton         from '../Button/DefaultButton';
 import colors, { ColorType } from '../../config/colors';
 
+export enum ValidUrlType {
+  Link  = 'LINK',
+  Image = 'IMAGE',
+  Video = 'VIDEO',
+};
+
+type HighlightUrlType = {
+  url:   string;
+  type:  ValidUrlType;
+  label: string;
+}
+
 export interface Props {
+  urls?:        HighlightUrlType[];
   icon?:        IconType;
   tags?:        React.ReactNode[];
   label:        React.ReactNode;
@@ -31,19 +46,32 @@ const Highlight: React.FC<Props> = props => {
   const handleHighlight = () => {
     setHidden(!hidden);
   };
+
+  const handleUrlButton = (url: HighlightUrlType) => () => {
+    alert(`View ${url.type}`);
+  };
   
   return (
-    <div className={clsx('mt-4 w-full flex flex-col min-h-[50px] items-center p-[16px] border border-solid border-borderColorHover dark:border-borderColorLight rounded-[6px]', props?.className || '')}>
+    <div 
+      className={clsx(
+        'mt-4 w-full flex flex-col min-h-[50px] items-center p-[16px] border border-solid border-borderColorHover dark:border-borderColorLight rounded-[6px]',
+        hidden ? 'h-auto' : 'h-full',
+        props?.className || ''
+      )}
+    >
       
       <div className="w-full flex flex-col justify-between h-full">
         <h2 className="w-full flex items-start m-0 font-sans font-medium">
           <div className="w-full flex items-center flex-1">
+            
             <span className="mr-[5px] dark:text-borderColorHover">
-            {icon}
+              {icon}
             </span>
+
             <span className="textColorEmphasis dark:text-textColor mr-[6px]">
               {props.label}
             </span>
+
             {props?.badge && 
               <span className="flex max-w-fit py-[1px] px-[6px] rounded-[15px] text-buttonBackgroundHover dark:text-borderColorHover border border-solid border-borderColorHover dark:border-borderColorLight font-sans text-[12px]">
                 {props.badge}
@@ -67,16 +95,41 @@ const Highlight: React.FC<Props> = props => {
           }
         </h2>
 
-        <div className={clsx('w-full flex-col justify-between h-full', hidden ? 'hidden' : 'flex')}>
+        <div 
+          className={clsx(
+            'w-full flex-col justify-between h-full',
+            hidden ? 'hidden' : 'flex'
+          )}
+        >
 
           {props?.description && 
-            <div className="highlight-desc flex flex-wrap w-full mt-3 mb-[-20px] text-buttonBackgroundHover dark:text-borderColorHover font-sans text-sm">
+            <div className="highlight-desc flex flex-wrap w-full mt-3 text-buttonBackgroundHover dark:text-borderColorHover font-sans text-sm">
               {props.description}
             </div>
           }
 
+          {props.urls && 
+            <div className="flex w-full items-center mt-[-3px] mb-[10px]">
+              {props.urls.map((url, index: number) => {
+                const isLink      = url.type === ValidUrlType.Link;
+                const linkTo      = isLink ? { linkTo: url.url } : {};
+                const handleClick = isLink ? undefined : handleUrlButton(url);
+
+                return (
+                  <DefaultButton
+                    key={`url-btn-${index}`}
+                    {...linkTo}
+                    onClick={handleClick}
+                    label={url.label}
+                    className="w-auto max-w-fit mr-[10px] min-h-fit py-[1px] px-[8px] text-[12px]"
+                  />
+                );
+              })}
+            </div>
+          }
+
           {props?.tags &&
-            <div className="w-full flex mt-4">
+            <div className="w-full flex">
               {props.tags.map((tag, index: number) => (
                 <div key={`tag-${index}`} className="flex items-center w-auto mr-[10px]">
                   <span

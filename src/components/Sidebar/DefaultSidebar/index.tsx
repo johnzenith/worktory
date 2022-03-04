@@ -1,10 +1,10 @@
-import React            from 'react';
-import Badge            from '../../Badge';
-import Author           from '../../Author';
-import Tagline          from '../../Tagline';
-import ProfileLinks     from '../../ProfileLinks';
-import MobileHeader     from '../../Header/MobileHeader';
-import OpenToWorkButton from '../../Button/OpenToWorkButton';
+import React         from 'react';
+import Badge         from '../../Badge';
+import Author        from '../../Author';
+import Tagline       from '../../Tagline';
+import ProfileLinks  from '../../ProfileLinks';
+import MobileHeader  from '../../Header/MobileHeader';
+import DefaultButton from '../../Button/DefaultButton';
 
 interface Props {}
 
@@ -30,7 +30,7 @@ const DefaultSidebar: React.FC<Props> = () => {
           <Badge label="Backend Engineer" className="justify-end md:w-full md:justify-start" />
         </div>
 
-        <OpenToWorkButton />
+        <DefaultButton label="Open To Work" />
         <ProfileLinks />
       </div>
     </aside>
