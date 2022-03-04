@@ -22,7 +22,7 @@ type HighlightUrlType = {
 }
 
 export interface Props {
-  urls:         HighlightUrlType[];
+  urls?:        HighlightUrlType[];
   icon?:        IconType;
   tags?:        React.ReactNode[];
   label:        React.ReactNode;
