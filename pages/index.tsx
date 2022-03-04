@@ -6,8 +6,8 @@ const Home: NextPage = () => {
   return (
     <div className="w-full">
       <Head>
-        <title>John Zenith</title>
-        <meta name="description" content="John Zenith - JavaScript Engineer" />
+        <title>John Musa</title>
+        <meta name="description" content="John Musa - JavaScript Engineer" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       
@@ -16,4 +16,4 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+export default Home;

@@ -98,6 +98,11 @@ const ProfileOverview: React.FC<Props> = () => {
       color: '#44883e',
     },
     {
+      name: 'Socket.IO',
+      icon: FaNodeJs,
+      color: '#000',
+    },
+    {
       name: 'React.JS',
       icon: FaReact,
       color: '#00d8ff',
@@ -106,6 +111,11 @@ const ProfileOverview: React.FC<Props> = () => {
       name: 'ReactNative',
       icon: FaReact,
       color: '#00d8ff',
+    },
+    {
+      name: 'Expo',
+      icon: FaReact,
+      color: '#000',
     },
     {
       name: 'Next.JS',
@@ -141,6 +151,11 @@ const ProfileOverview: React.FC<Props> = () => {
       name: 'Vercel',
       icon: FaReact,
       color: '#00d8ff',
+    },
+    {
+      name: 'Netlify',
+      icon: FaReact,
+      color: '#00AD9F',
     },
     {
       name: 'Firebase',
