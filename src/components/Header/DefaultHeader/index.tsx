@@ -31,7 +31,7 @@ const Header: React.FC<Props> = () => {
     {
       icon:    GoRepo,
       link:    '/',
-      label:   'Developer Story',
+      label:   'Story',
       count:   20,
       content: '2',
     },
