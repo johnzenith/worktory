@@ -23,8 +23,8 @@ const PinnedProjects: React.FC<Props> = () => {
         description: 'A portfolio template library replicating the GitHub UI. Same is used to power this site.',
         urls: [
           {
-            url:   '#',
-            type:  ValidUrlType.Image,
+            url:   'https://res.cloudinary.com/worktory/video/upload/v1646502324/worktory_wxwpgk.mkv',
+            type:  ValidUrlType.Video,
             label: 'Preview',
           },
           {
@@ -47,8 +47,8 @@ const PinnedProjects: React.FC<Props> = () => {
         description: 'Demo for an employee management module',
         urls: [
           {
-            url:   '#',
-            type:  ValidUrlType.Image,
+            url:   'https://res.cloudinary.com/worktory/video/upload/v1646506191/kingso-erp_umxnfb.mkv',
+            type:  ValidUrlType.Video,
             label: 'Preview',
           },
           {
@@ -71,8 +71,8 @@ const PinnedProjects: React.FC<Props> = () => {
         description: 'app.slack.com clone',
         urls: [
           {
-            url:   '#',
-            type:  ValidUrlType.Image,
+            url:   'https://res.cloudinary.com/worktory/video/upload/v1646508793/slack-demo_qiqgl7.mkv',
+            type:  ValidUrlType.Video,
             label: 'Preview',
           },
           {
@@ -96,7 +96,7 @@ const PinnedProjects: React.FC<Props> = () => {
         urls: [
           {
             url:   '#',
-            type:  ValidUrlType.Image,
+            type:  ValidUrlType.Video,
             label: 'Preview',
           },
           {
@@ -119,8 +119,8 @@ const PinnedProjects: React.FC<Props> = () => {
         description: 'A demo of a financial app UI on capital investment',
         urls: [
           {
-            url:   '#',
-            type:  ValidUrlType.Image,
+            url:   'https://res.cloudinary.com/worktory/video/upload/v1646507840/sfs-capital_velyj1.mkv',
+            type:  ValidUrlType.Video,
             label: 'Preview',
           },
           {
@@ -144,7 +144,7 @@ const PinnedProjects: React.FC<Props> = () => {
         urls: [
           {
             url:   '#',
-            type:  ValidUrlType.Image,
+            type:  ValidUrlType.Video,
             label: 'Preview',
           },
           {
@@ -164,11 +164,11 @@ const PinnedProjects: React.FC<Props> = () => {
         badge:       'Code',
         label:       'Socket.IO Chat App',
         project:     true,
-        description: 'A simple chat app that demonstates how web socket works using Socket.IO',
+        description: 'A simple chat app that demonstrates how web socket works using Socket.IO',
         urls: [
           {
-            url:   '#',
-            type:  ValidUrlType.Image,
+            url:   'https://res.cloudinary.com/worktory/video/upload/v1646508172/web-socket_dyd33m.mkv',
+            type:  ValidUrlType.Video,
             label: 'Preview',
           },
           {

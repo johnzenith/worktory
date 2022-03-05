@@ -2,6 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Scrollbar */
+html {
+  --scrollbarBG: theme('colors.borderColor');
+  --thumbBG: theme('colors.borderColorHover');
+}
+
+html.dark {
+  --scrollbarBG: theme('colors.borderColorLight');
+  --thumbBG: theme('colors.borderColorHover');
+}
+
+body::-webkit-scrollbar,
+.tab-menu-wrapper::-webkit-scrollbar {
+  width: 11px;
+}
+
+body,
+.tab-menu-wrapper::-webkit-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+}
+
+body::-webkit-scrollbar-track,
+.tab-menu-wrapper::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+}
+
+body::-webkit-scrollbar-thumb,
+.tab-menu-wrapper::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG) ;
+  border-radius: 6px;
+  border: 2px solid var(--scrollbarBG);
+}
+/* Scrollbar Ends */
+
 @import '../src/components/Image/ProfileImage/style';
 @import '../src/components/Header/MobileHeader/style';
 @import '../src/components/ProfileLinks/style';

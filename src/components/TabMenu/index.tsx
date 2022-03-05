@@ -98,7 +98,7 @@ const TabMenu: React.FC<Props> = props => {
     <React.Fragment>
       <div
         className={clsx(
-          'mx-auto w-full md:max-w-full pb-[1px] overflow-x-auto overflow-y-hidden tab-menu-wrapper',
+          'tab-menu-wrapper mx-auto w-full md:max-w-full pb-[1px] overflow-x-auto overflow-y-hidden',
           ScreenConfig.mobile.alignLeft ? '' : 'max-w-[452px]',
         )}
       >
