@@ -1,5 +1,4 @@
-import React   from 'react';
-import TabMenu from '../../TabMenu';
+import React         from 'react';
 import { VscOutput } from "react-icons/vsc";
 import {
   FaLaptopCode,
@@ -7,6 +6,8 @@ import {
 } from "react-icons/fa";
 import { GoRepo } from "react-icons/go";
 
+import TabMenu         from '../../TabMenu';
+import Footer          from '../../Footer';
 import PinnedProjects  from '../../Content/PinnedProjects';
 import ProfileOverview from '../../Content/ProfileOverview';
 
@@ -18,18 +19,19 @@ const Header: React.FC<Props> = () => {
     {
       icon:    VscOutput,
       link:    '/',
-      label:   'Overview',
+      label:   'Profile',
       content: (
         <React.Fragment>
           <ProfileOverview />
           <PinnedProjects />
+           <Footer />
         </React.Fragment>
       )
     },
     {
       icon:    GoRepo,
       link:    '/',
-      label:   'Project',
+      label:   'Developer Story',
       count:   20,
       content: '2',
     },

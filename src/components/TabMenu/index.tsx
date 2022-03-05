@@ -7,6 +7,8 @@ import clsx from 'clsx';
 import Link from 'next/link';
 import { IconType } from "react-icons";
 
+import ScreenConfig from '../../config/screen';
+
 type TabMenuMarginsType = {
   marginLeft:  number | string;
   marginRight: number | string;
@@ -94,14 +96,17 @@ const TabMenu: React.FC<Props> = props => {
 
   return (
     <React.Fragment>
-      <div className={clsx(
-        'mx-auto w-full max-w-[452px] md:max-w-full pb-[1px] overflow-x-auto overflow-y-hidden tab-menu-wrapper',
-        ''
-      )}>
+      <div
+        className={clsx(
+          'mx-auto w-full md:max-w-full pb-[1px] overflow-x-auto overflow-y-hidden tab-menu-wrapper',
+          ScreenConfig.mobile.alignLeft ? '' : 'max-w-[452px]',
+        )}
+      >
         <nav
           ref={menuTabElem}
           className={clsx(
-            'horizontal-menu-tabs w-full min-w-[452px] overflow-visible flex items-center justify-center md:justify-start mx-auto md:mx-0 border-solid mt-[17px] md:mt-2 flex-row h-auto border-b border-borderColor dark:border-borderColorLight',
+            'horizontal-menu-tabs w-full min-w-[452px] overflow-visible flex items-center  md:justify-start mx-auto md:mx-0 border-solid mt-[17px] md:mt-2 flex-row h-auto border-b border-borderColor dark:border-borderColorLight',
+            ScreenConfig.mobile.alignLeft ? '' : 'justify-center',
             props?.className || ''
           )}
         >

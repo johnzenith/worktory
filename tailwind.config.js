@@ -16,6 +16,7 @@ module.exports = {
         borderActive:          '#F78166',
         stickyBorder:          '#161b22',
         textColorDark:         '#c9d1d9',
+        borderLineDark:        '#484f5824',
         headerTextColor:       'rgba(240,246,252,0.7)',
         borderColorHover:      '#8b949e',
         buttonBackground:      '#21262d',

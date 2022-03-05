@@ -7,6 +7,7 @@ import {
   FaRegEnvelope,
   FaStackOverflow,
 } from 'react-icons/fa';
+import ScreenConfig from '../../config/screen';
 
 interface Props {
   className?: string;
@@ -66,7 +67,13 @@ const ProfileLinks: React.FC<Props> = props => {
   });
 
   return (
-    <div className={clsx('flex mt-4 w-full flex-col items-center max-w-[389px]', props?.className || '')}>
+    <div
+      className={clsx(
+        'flex mt-4 w-full flex-col items-center',
+        ScreenConfig.mobile.alignLeft ? '' : 'max-w-[389px]',
+        props?.className || ''
+      )}
+    >
       {renderLinks}
     </div>
   );
