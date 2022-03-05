@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import '../src/components/Image/ProfileImage/style';
-@import '../src/components/Header/MobileHeader/style';
-@import '../src/components/ProfileLinks/style';
-@import '../src/components/Content/ProfileOverview/style';
-@import '../src/components/TabMenu/style';
-
 /* Scrollbar */
 html {
   --scrollbarBG: theme('colors.borderColor');
@@ -42,3 +36,9 @@ body::-webkit-scrollbar-thumb,
   border: 2px solid var(--scrollbarBG);
 }
 /* Scrollbar Ends */
+
+@import '../src/components/Image/ProfileImage/style';
+@import '../src/components/Header/MobileHeader/style';
+@import '../src/components/ProfileLinks/style';
+@import '../src/components/Content/ProfileOverview/style';
+@import '../src/components/TabMenu/style';
