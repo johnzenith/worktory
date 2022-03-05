@@ -183,6 +183,25 @@ const PinnedProjects: React.FC<Props> = () => {
           },
         ]
       },
+      {
+        tags:        ['WordPress', 'WooCommerce', 'PHP', 'jQuery'],
+        badge:       'Website',
+        label:       'Bogat Watch Official Site',
+        project:     true,
+        description: 'A website for purchasing wrist watches with embedded cryptocurrency wallet',
+        urls: [
+          {
+            url:   '#',
+            type:  ValidUrlType.Image,
+            label: 'Preview',
+          },
+          {
+            url:   'https://bogatwatch.com/',
+            type:  ValidUrlType.Link,
+            label: 'Open',
+          },
+        ]
+      },
     ];
     
     return splitArray(pinnedProjects, 2);

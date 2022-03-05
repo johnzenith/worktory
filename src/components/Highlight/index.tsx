@@ -4,7 +4,15 @@ import clsx                 from 'clsx';
 import { IconType }         from "react-icons";
 import { FiLayers }         from "react-icons/fi";
 import { VscPreview }       from "react-icons/vsc";
-import { FaGripHorizontal } from "react-icons/fa";
+import { 
+  GoChevronUp,
+  GoChevronDown,
+ }       from "react-icons/go";
+import {
+  FaExpand,
+  FaCompress,
+  FaGripHorizontal,
+} from "react-icons/fa";
 
 import DefaultButton         from '../Button/DefaultButton';
 import colors, { ColorType } from '../../config/colors';
@@ -28,12 +36,14 @@ export interface Props {
   label:        React.ReactNode;
   badge?:       string;
   toggle?:      boolean;
+  shrink?:      (shrink: boolean) => void;
   className?:   string;
   description?: React.ReactNode;
 }
 
 const Highlight: React.FC<Props> = props => {
   const [hidden, setHidden] = useState(false);
+  const [shrink, setShrink] = useState(false);
 
   const icon = props.icon ?
     <props.icon size={16} /> : <FiLayers size={16} />;
@@ -45,6 +55,12 @@ const Highlight: React.FC<Props> = props => {
 
   const handleHighlight = () => {
     setHidden(!hidden);
+  };
+
+  const handleShrinkContent = () => {
+    const isShrink = !shrink;
+    setShrink(isShrink);
+    props.shrink && props.shrink(isShrink);
   };
 
   const handleUrlButton = (url: HighlightUrlType) => () => {
@@ -78,6 +94,19 @@ const Highlight: React.FC<Props> = props => {
               </span>
             }
           </div>
+          
+          {props.shrink && 
+            <button 
+              aria-label="shrink-content"
+              onClick={handleShrinkContent}
+              className="w-[16px] flex items-center mr-[10px]"
+            >
+              <span className="mr-[5px] mt-[-2px] text-buttonBackgroundHover dark:text-borderColorHover">
+                {shrink  && <GoChevronDown size={18} />}
+                {!shrink && <GoChevronUp size={18} />}
+              </span>
+            </button>
+          }
           
           {props.toggle &&
             <button 
@@ -129,7 +158,7 @@ const Highlight: React.FC<Props> = props => {
           }
 
           {props?.tags &&
-            <div className="w-full flex">
+            <div className="w-full flex flex-wrap">
               {props.tags.map((tag, index: number) => (
                 <div key={`tag-${index}`} className="flex items-center w-auto mr-[10px]">
                   <span
